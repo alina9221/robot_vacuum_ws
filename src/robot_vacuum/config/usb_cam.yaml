@@ -1,5 +1,7 @@
 usb_cam_node:
   ros__parameters:
+    video_device: "/dev/video0"
+    camera_info_url: "package://robot_vacuum/config/camera_info.yaml"
     video_device: "/dev/video0"      # или "/dev/v4l/by-id/..."
     framerate: 30.0
     pixel_format: "mjpeg2rgb"        # или "yuyv"
@@ -11,3 +13,4 @@ usb_cam_node:
     contrast: 32
     saturation: 32
     sharpness: 22
+    
