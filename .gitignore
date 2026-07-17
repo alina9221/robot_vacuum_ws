@@ -1,30 +1,75 @@
-# Ignore directories
-scripts/
-src/
-robot_vacuum/
-
-# Ignore everything in src *
-src/*
-!src/robot_vacuum*
-
-# Ignore everything in output except the readme
-scripts/*
-!scripts/install_dependencies.sh
-
-
-# Ignore Python bytecodes
-__pycache__/
+# ========== ROS 2 ==========
+# Папки сборки и установки (генерируются colcon build)
+build/
+install/
+log/
+devel/          # для ROS 1, но на всякий случай
 *.pyc
+__pycache__/
 
-# Ignore temp files
+# ========== Python ==========
+*.py[cod]
+*.so
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# ========== C++ / CMake ==========
+CMakeLists.txt.user
+CMakeCache.txt
+CMakeFiles/
+Makefile
+cmake_install.cmake
+*.o
+*.a
+*.so
+*.dylib
+
+# ========== Редакторы и IDE ==========
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.user
+
+# ========== Docker ==========
+# Не нужно игнорировать Dockerfile или docker-compose.yml,
+# но если есть большие временные образы или дампы — игнорим
+docker_build/
+*.tar
+*.img
+
+# ========== SSH (ОСТОРОЖНО!) ==========
+# Если ты случайно скопировала ключи в репозиторий — не дай бог
+*.pem
+*.key
+id_rsa
+id_rsa.pub
+known_hosts
+authorized_keys
+
+# ========== Логи и дампы ==========
+*.log
+*.bag
+*.db
+*.sqlite3
+*.pcap
+
+# ========== Системные ==========
+Thumbs.db
+Desktop.ini
+
+# ========== Временные файлы ==========
 *.tmp
 *.temp
+*.cache
 
-# Ignore files related to your dev environment
-.vscode/
-
-# generated map database by rtabmap
-*.db
-
-# Ignore .zip files
-*.zip
+# ========== Конфиги с локальными путями ==========
+# Например, если ты хранишь пути к своему устройству
+local_config.yaml
+*.local.yaml
