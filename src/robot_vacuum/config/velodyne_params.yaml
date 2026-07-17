@@ -1,1 +1,7 @@
-
+# from https://github.com/ros-drivers/velodyne/tree/ros2
+velodyne_driver_node:
+    ros__parameters:
+        device_ip: 192.168.1.201 # be sure that your ip adress is 192.168.***.*** or look destination in the velodyne settings
+        gps_time: false
+        time_offset: 0.0
+        enabled: true
