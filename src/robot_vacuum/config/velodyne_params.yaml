@@ -1,7 +1,29 @@
+# ============================================
+# Параметры драйвера Velodyne VLP-16
+# Для ROS 2 Humble (формат ros__parameters)
+# ============================================
 
 velodyne_driver_node:
-    ros__parameters:
-        device_ip: 192.168.1.201 # be sure that your ip adress is 192.168.***.*** or look destination in the velodyne settings
-        gps_time: false
-        time_offset: 0.0
-        enabled: true
+  ros__parameters:
+    # ----- Сетевые настройки -----
+    device_ip: 192.168.1.201        # IP-адрес лидара (по умолчанию 192.168.1.201)
+    device_port: 2368               # Порт UDP (стандартный 2368)
+    device_mac: ""                  # Можно указать MAC, если несколько лидаров в сети
+
+    # ----- Режимы работы -----
+    model: "VLP16"                  # Модель: VLP16, VLP32, HDL64 и т.д.
+    calibration: ""                 # Путь к файлу калибровки (если есть)
+    
+    # ----- Временная синхронизация -----
+    gps_time: false                 # true, если используешь GPS PPS
+    time_offset: 0.0                # Смещение времени в секундах
+    time_stamp_method: "time_stamp" # "time_stamp" или "gps"
+
+    # ----- Управление драйвером -----
+    enabled: true                   # Запускать ли драйвер сразу
+    frame_id: "velodyne"            # Имя системы координат для облака точек
+    scan_phase: 0.0                 # Сдвиг фазы сканирования (в радианах)
+
+    # ----- Диагностика и топики -----
+    diagnostics_tolerance: 0.05     # Допуск для диагностики (сек)
+    device_name: "VLP-16"           # Человеческое имя устройства
