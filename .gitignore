@@ -1,0 +1,30 @@
+# Ignore directories
+scripts/
+src/
+robot_vacuum/
+
+# Ignore everything in src *
+src/*
+!src/robot_vacuum*
+
+# Ignore everything in output except the readme
+scripts/*
+!scripts/install_dependencies.sh
+
+
+# Ignore Python bytecodes
+__pycache__/
+*.pyc
+
+# Ignore temp files
+*.tmp
+*.temp
+
+# Ignore files related to your dev environment
+.vscode/
+
+# generated map database by rtabmap
+*.db
+
+# Ignore .zip files
+*.zip
